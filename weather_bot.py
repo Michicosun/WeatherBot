@@ -7,6 +7,9 @@ headers = {
     'AppleWebKit/537.36 (KHTML, like Gecko)' +
     'Chrome/58.0.3029.110 Safari/537.3'}
 
+def change_fahrenheit_to_celsius(t):
+    return int(1.0 * (t - 32) * 5 / 9)
+
 def weather(city, init_name):
     city = city.replace(" ", "+")
     res = ""
@@ -24,7 +27,7 @@ def weather(city, init_name):
         ret_str += cur_location + "\n"
         ret_str += cur_time + "\n"
         ret_str += cur_info + "\n"
-        ret_str += cur_weather + "°C" + "\n"
+        ret_str += change_fahrenheit_to_celsius(int(cur_weather)) + "°C" + "\n"
         return ret_str
     except Exception:
         return "Can't find city: " + init_name
