@@ -27,7 +27,7 @@ def weather(city, init_name):
         ret_str += cur_location + "\n"
         ret_str += cur_time + "\n"
         ret_str += cur_info + "\n"
-        ret_str += change_fahrenheit_to_celsius(int(cur_weather)) + "°C" + "\n"
+        ret_str += str(change_fahrenheit_to_celsius(int(cur_weather))) + "°C" + "\n"
         return ret_str
     except Exception:
         return "Can't find city: " + init_name
