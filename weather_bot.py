@@ -74,6 +74,7 @@ def add_func(message):
 
 def get_city_name_for_add(message):
     add_city(message.text, message.chat.id)
+    bot.send_message(message.chat.id, "OK")
 
 @bot.message_handler(commands=['delete_city'])
 def delete_func(message):
@@ -82,6 +83,7 @@ def delete_func(message):
 
 def get_city_name_for_del(message):
     del_city(message.text, message.chat.id)
+    bot.send_message(message.chat.id, "OK")
 
 def get_all_cities(chat_id):
     create_if_not_created(chat_id)
